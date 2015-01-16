@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<!--
+Connor Voskuil
+1/15/2015
+Programming 2 G Period
+MA: OOP Elements
+
+The following code is an example from the MDN page "Introduction to Object-Oriented JavaScript".-->
+
+
+<html>
+<body>
+<script>
+var Person /*Person is the prototype object. It is a variable that contains a constructor function. The constructor function can be called to
+generate a new instane of Person. It takes the parameter firstName.*/ = function (firstName) {
+  this.firstName = firstName; /*this.firstName is a property that is set equal to the parameter firstName*/
+};
+
+Person.prototype.sayHello = function() {
+  console.log("Hello, I'm " + this.firstName);
+};
+
+/*Person.protoype.sayHello is a method that is part of the prototype object Person. It adds
+the functionality to log "Hello, I'm " + the firstName of the particular instance.*/
+
+var person1 = new Person("Alice");
+var person2 = new Person("Bob");
+
+/*person1 & person2 are instances of the prototype object Person. The firstName "Alice" and "Bob" is passed in to the constructor function within Person.*/
+
+person1.sayHello();
+
+person2.sayHello();	
+
+/* the code person1.sayHello will output "Hello, I'm Alice" to the console.*/
+</script>
+</body>
+</html>
